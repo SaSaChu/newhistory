@@ -25,22 +25,70 @@
     <div class="allBoxs borderBG">
       <header>
         <a href="index.html" class="logo"><img src="img/logo.svg"></a>
-        <select>
-          <option>繁體中文</option>
-          <option>英文</option>
-        </select>
-        <!-- <ul class="lang">
-          <li>
-            <a href="#" class="dropdown">繁體中文</a>
-            <ul class="dropdown-open">
-              <li><a href="#">英文</a></li>
-            </ul>
-          </li>
-        </ul> -->
+        <div class="headerR">
+          <div class="allBoxs mobNoSpace">
+            <a href="https://www.facebook.com/groups/newhistoryface" target="_blank" class="mob_open order_r">
+              <img src="img/fb.svg" class="fbIcon">
+            </a>
+
+            <select class="pretty-select mob_close">
+              <option>繁體中文</option>
+              <option>英文</option>
+            </select>
+
+            <a href="https://www.facebook.com/groups/newhistoryface" target="_blank" class="mob_close order_r">
+              <img src="img/fb.svg" class="fbIcon">
+            </a>
+
+            <div class="search-container mob_close">
+              <form action="">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="icon-search"></i></button>
+              </form>
+            </div>
+          </div>
+
+          <!-- 手機Menu・觸發 -->
+          <div class='m_header_r'><i class="icon-menu"></i></div>
+        </div>
       </header>
     </div>
 
-    <div class="allBoxs">
+    <!-- 手機Menu・內容 -->
+    <div class='m_menu'>
+      <div class="allBoxs borderBG h65">
+        <a href="index.html" class="logo"><img src="img/logo.svg"></a>
+        <div class='menuClose'><i class="icon-close"></i></div>
+      </div>
+      <div class='menuBox'>
+        <!-- menu cent -->
+        <div class='allBoxs'>
+          
+
+          <a href="" class="m_menuLink">關於新史學</a>
+          <a href="" class="m_menuLink">總目索引</a>
+          <a href="" class="m_menuLink">各期摘要</a>
+          <a href="" class="m_menuLink">目錄檢索</a>
+          <a href="" class="m_menuLink">格式下載</a>
+          <a href="" class="m_menuLink">訂閱新史學</a>
+          <a href="" class="m_menuLink">聯絡我們</a>
+          
+          <div class="search-container">
+            <form action="">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="icon-search"></i></button>
+            </form>
+          </div>
+
+          <select class="pretty-select m_t_15">
+            <option>繁體中文</option>
+            <option>英文</option>
+          </select>
+        </div>
+      </div>
+    </div>  
+
+    <div class="allBoxs mob_close">
       <div class="menuBoxs">
         <a href="" class="menuLink">關於新史學</a>
         <a href="" class="menuLink">總目索引</a>
@@ -267,11 +315,14 @@
 
     <!-- 相關連結 -->
     <div class="allBoxs">
-      <div class="widthBoxs">
+      <div class="widthBoxs mobNoSpace">
         <p class="linkTitle">相關連結</p>
         <div class="linkBoxs p_td_70">
           <div class="linkBoxL">
-           <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2Fnewhistoryface&width=510&show_metadata=true&height=462&appId" width="510" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+           <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2Fnewhistoryface&width=510&show_metadata=true&height=462&appId" width="510" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="mob_close"></iframe>
+
+           <iframe src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2Fnewhistoryface&width=510&show_metadata=true&height=462&appId" width="100%" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="mob_open"></iframe>
+
             <a href=""><img src="img/link01.png" class="linkOutImg"></a>
           </div>
           <div class="linkBoxR">
@@ -294,7 +345,8 @@
     <div class="allBoxs backColorDeepBlue">
       <footer>
         <div class='allBoxs borderBW p_td_30'>
-          <p class='footerText'><b>聯絡人：</b>王小明&nbsp;&nbsp;&nbsp;&nbsp;<b>聯絡電話：</b>02-2782-9555 #226&nbsp;&nbsp;&nbsp;&nbsp;<b>聯絡地址：</b>11599 臺北市中研院郵局第1-44號信箱</p>
+          <p class='footerText mob_close'><b>聯絡人：</b>王小明&nbsp;&nbsp;&nbsp;&nbsp;<b>聯絡電話：</b>02-2782-9555 #226&nbsp;&nbsp;&nbsp;&nbsp;<b>聯絡地址：</b>11599 臺北市中研院郵局第1-44號信箱</p>
+          <p class='footerText mob_open'><b>聯絡人：</b>王小明</br><b>聯絡電話：</b>02-2782-9555 #226&nbsp;&nbsp;&nbsp;&nbsp;<b></br>聯絡地址：</b>11599 臺北市中研院郵局第1-44號信箱</p>
         </div>
         <div class='allBoxs p_td_15'>
           <p class='textWhite_13'>2021 © 新史學New History版權所有 如有引用轉載請註明出處</p>

@@ -27,7 +27,21 @@ body {
     background-color: white;
 }
 
+.mob_close {
+  display: inline-block !important;
 
+  @include range-width(0, 450px) {
+    display: none !important;
+  }
+}
+
+.mob_open {
+  display: none !important;
+
+  @include range-width(0, 450px) {
+    display: inline-block !important;
+  }
+}
 
 a, button {
   text-decoration: none;
@@ -39,6 +53,59 @@ p {
   margin: 0;
 }
 
+.search-container {
+  float: right;
+}
+
+input[type=text] {
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 1rem;
+  border: none;
+  margin: 0;
+  background-color: rgba(246, 246, 246, 1);
+}
+
+.search-container button {
+  float: right;
+  padding: 8px 10px;
+  margin-right: 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(246, 246, 246, 1);
+
+
+  &:hover {
+    background: #ccc;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .search-container {
+    float: none;
+  }
+
+  .search-container button {
+    float: none;
+    display: inline-block;
+    text-align: left;
+    width: 45px;
+    margin: 0;
+    padding: 14px;
+  }
+
+  input[type=text] {
+    border: 0;
+    float: none;
+    display: inline-block;
+    text-align: left;
+    width: calc(100% - 50px);
+    margin: 0;
+    padding: 14px;
+  }
+}
 
 
 .backColorGrey {
@@ -61,6 +128,13 @@ p {
   margin-top: 30px;
 }
 
+.fbIcon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
 .order_l {
     float: left;
 }
@@ -74,9 +148,19 @@ p {
 }
 
 .allBoxs {
-    display: inline-block;
-    width: 100%;
-    @include clearfix();
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+
+  &.mobNoSpace {
+    @include range-width(0, 450px) {
+      padding: 0;
+    }
+  }
+
+  @include range-width(0, 450px) {
+    padding: 0 15px;
+  }
 }
 
 .widthBoxs {
@@ -84,6 +168,16 @@ p {
   width: 100%;
   max-width: 1004px;
   @include clearfix();
+
+  &.mobNoSpace {
+    @include range-width(0, 450px) {
+      padding: 0;
+    }
+  }
+
+  @include range-width(0, 450px) {
+    padding: 0 15px;
+  }
 }
 
 
@@ -98,18 +192,22 @@ p {
 
 
 header {
-    display: inline-block;
-    width: 100%;
-    max-width: 1004px;
-    padding: 20px 0;
-    @include clearfix();
+  display: inline-block;
+  width: 100%;
+  max-width: 1004px;
+  padding: 20px 0;
+  @include clearfix();
 
-    .logo {
-      display: inline-block;
-      width: 100%;
-      max-width: 106px;
-      float: left;
-    }
+  @include range-width(0, 450px) {
+    padding: 10px 0;
+  }
+}
+
+.logo {
+  display: inline-block;
+  width: 100%;
+  max-width: 106px;
+  float: left;
 }
 
 footer {
@@ -118,12 +216,25 @@ footer {
   max-width: 1004px;
 }
 
+.headerR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 150px);
+  float: right;
+  height: 45px;
+}
+
 .bannerBoxs {
   display: inline-block;
   width: 100%;
   height: 500px;
   background: url(../img/banner.png) center center;
   background-size: cover;
+
+  @include range-width(0, 450px) {
+    height: 430px;
+  }
 }
 
 .bannerCentBox {
@@ -136,12 +247,22 @@ footer {
   height: 500px;
   background-color: rgba(122, 79, 59, .8);
   float: left;
+
+  @include range-width(0, 450px) {
+    margin-left: 20px;
+    max-width: 250px;
+    height: 430px;
+  }
   
   .bannerCent {
     display: inline-block;
     width: 100%;
     // height: 500px;
     padding: 0 55px;
+
+    @include range-width(0, 450px) {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -183,12 +304,31 @@ footer {
   width: calc(100% / 3 - 30px * 2 / 3);
   float: left;
 
+  @include range-width(0, 450px) {
+    width: 100%;
+    margin-bottom: 30px;
+
+    &:nth-child(n+5) {
+      display: none;
+    }
+  }
+
   &:nth-child(3n+2) {
     margin: 0 30px;
+
+    @include range-width(0, 450px) {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &:nth-child(n+4) {
     margin-top: 30px;
+
+    @include range-width(0, 450px) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -238,6 +378,10 @@ footer {
     display: inline-block;
     width: calc(100% - 400px - 30px);
     float: left;
+
+    @include range-width(0, 450px) {
+      width: 100%;
+    }
   }
 
   .linkBoxR {
@@ -245,7 +389,12 @@ footer {
     width: 400px;
     float: right;
     background-color: rgba(150, 158, 155, 1);
-    padding: 15px;   
+    padding: 15px;
+
+    @include range-width(0, 450px) {
+      width: 100%;
+      margin-top: 30px;
+    } 
   }
 }
 
@@ -266,6 +415,10 @@ footer {
   font-size: 2rem;
   line-height: 1.5;
   font-weight: 900;
+
+  @include range-width(0, 450px) {
+    font-size: 1.6rem;
+  }
 }
 
 .textWhite_20 {
@@ -318,6 +471,11 @@ footer {
   display: inline-block;
   color: white;
   font-size: 1.23rem;
+
+  @include range-width(0, 450px) {
+    font-size: 1.13rem;
+    line-height: 1.5;
+  }
 }
 
 .noteText {
@@ -404,6 +562,10 @@ footer {
     position: absolute;
     right: 0;
     bottom: 6px;
+
+    @include range-width(0, 450px) {
+      width: 65%;
+    }
   }
 }
 
@@ -411,10 +573,18 @@ footer {
 // space
 .p_td_70{
   padding: 70px 0;
+
+  @include range-width(0, 450px) {
+    padding: 35px 0;
+  }
 }
 
 .p_t_70 {
   padding-top: 70px;
+
+  @include range-width(0, 450px) {
+    padding-top: 35px;
+  }
 }
 
 .p_d_70 {
@@ -423,6 +593,10 @@ footer {
 
 .p_td_30 {
   padding: 30px 0;
+
+  @include range-width(0, 450px) {
+    padding: 15px 0;
+  }
 }
 
 .p_td_15 {
@@ -435,6 +609,14 @@ footer {
 
 .m_td_30 {
   margin: 30px 0;
+}
+
+.m_t_15 {
+  margin-top: 15px;
+}
+
+.h65 {
+  padding: 10px 15px;
 }
 
 
@@ -453,6 +635,11 @@ footer {
   &:hover, &:active {
     background-color: rgba(255, 255, 255, .75);
   }
+
+  @include range-width(0, 450px) {
+    padding: 10px 25px;
+    font-size: 1.23rem;
+  }
 }
 
 .btnGrey {
@@ -468,6 +655,11 @@ footer {
   &:hover, &:active {
     background-color: $maincolor;
   }
+
+  @include range-width(0, 450px) {
+    padding: 10px 25px;
+    font-size: 1.23rem;
+  }
 }
 
 .btnMain {
@@ -482,6 +674,11 @@ footer {
 
   &:hover, &:active {
     background-color: rgba(101, 60, 69, .75);
+  }
+
+  @include range-width(0, 450px) {
+    padding: 10px 25px;
+    font-size: 1.23rem;
   }
 }
 
@@ -502,6 +699,10 @@ footer {
   &:hover, &:active {
     color: $maincolor;
   }
+
+  @include range-width(0, 450px) {
+    font-size: 1.23rem;
+  }
 }
 
 .linkMore {
@@ -516,6 +717,26 @@ footer {
     color: $maincolor;
   }
 }
+
+.m_menuLink {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    float: left;
+    color: #505050;
+    font-size: 1.23rem;
+    font-weight: 500;
+    margin-right: 45px;
+    padding: 20px 0;
+    position: relative;
+    @include transition(all .3s);
+    border-bottom: 1px solid rgba(244, 239, 238, 1);
+    padding-right: 20px;
+
+    &:hover {
+      background-color: rgba(244, 239, 238, 1);
+    }
+  }
 
 .menuBoxs {
   display: inline-block;
@@ -552,6 +773,66 @@ footer {
 
 
 // effect
+// 手機Menu
+.m_header_r {
+  display: none;
+
+  @include range-width(0, 450px) {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 6px;
+  }
+
+  .icon-menu {
+    font-size: 1.8rem;
+    color: $maincolor;
+  }
+}
+
+.m_menu {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: -100%;
+  @include transition(all .3s);
+  
+
+  @include range-width(0, 1040px) {
+    display: inline-block;
+  }
+
+  &.menu_open {
+    right: 0;
+  }
+
+  .menuBox {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    // position: relative;
+    background: url(../image/m_menu_bg.svg)  bottom right no-repeat;
+    -moz-background-size: cover;
+    background-size: cover;
+  }
+
+  .menuClose {
+    display: inline-block;
+    width: 7%;
+    float: right;
+    font-size: 1.8rem;
+    color: $maincolor;
+    margin-top: 13px;
+  }
+}
+
+
 :root {
   --swiper-theme-color: rgba(101, 60, 69, 1) !important;
 }
@@ -562,6 +843,9 @@ footer {
 }
 
 .swiper-wrapper {
+  @include range-width(0, 450px) {
+    width: 100%;
+  }
   height: 260px !important;
 }
 
@@ -586,51 +870,35 @@ footer {
   align-items: center;
 }
 
-// ul li {
-//   list-style: none;
-//   padding-top: 10px;
-// }
+.pretty-select {
+  /*移除箭頭樣式*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
 
-// ul {
-//   padding: 0;
-//   float: right;
-// }
+  /*改變右邊箭頭樣式*/
+  background: url("../img/arrow_drop.png") no-repeat right center transparent;
+  
+  border:0;
+  outline: 0;
+  // width:100%;
+  height:34px;
+  padding-left:5px;
+  padding-right:40px;
+  color:black;
+  float: right;
+  margin-left: 20px;
 
-// .lang {
-//   margin: 0;
+  @include range-width(0, 450px) {
+    margin-left: 0;
+    margin-right: 20px; 
+  }
+}
 
-//   li {
-//     display: inline-block;
-//     width: 100px;
-//     border: 1px solid white;
-
-//     a {
-//       display: inline-block;
-//       width: 100%;
-//       line-height: 30px;
-//       font-size: 1rem;
-//       text-decoration: none;
-//       color: black;
-
-//       &:hover, &.active {
-//         color: black;
-//       }
-//     }
-//   }
-// }
-
-// .lang li > ul {
-//   display: none;
-//   position: absolute;
-//   z-index: 88;
-//   background-color: rgba(244, 239, 238, 255);
-//   padding-top: 0;
-// }
-
-// .lang li > ul > li {
-//   padding-top: 0;
-// }
-
+/*IE隱藏箭頭樣式*/
+.pretty-select::-ms-expand { 
+  display: none; 
+}
 
 
 
