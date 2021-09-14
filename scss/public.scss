@@ -20,7 +20,7 @@ body {
 
     font-size: 13px;
     text-align: center;
-    font-family: 'Noto Sans TC', sans-serif,  "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+    font-family:'Roboto', 'Noto Sans TC', "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     font-weight: 300;
 
@@ -147,6 +147,13 @@ input[type=text] {
   position: relative;
 }
 
+.pageBoard {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(146, 113, 98, 1);
+}
+
 .allBoxs {
   display: inline-block;
   width: 100%;
@@ -262,6 +269,72 @@ footer {
 
     @include range-width(0, 450px) {
       padding: 0 20px;
+    }
+  }
+}
+
+
+.allvilBox {
+  display: inline-block;
+  width: calc(98% / 4 - 30px * 3 / 5);
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-bottom: 2px dotted rgba(195, 177, 170, .5);
+
+  &.aNoBorder {
+    border-bottom: 0;
+  }
+
+  @include range-width(0, 450px) {
+    width: 100%;
+
+    &:first-child{
+      padding-top: 30px;
+    }
+  }
+
+  &:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+.allvilCent {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+
+  .aYear {
+    display: inline-block;
+    background-color: rgba(195, 177, 170, 1);
+    padding: 6px 13px;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 400;
+    float: left;
+  }
+
+  .aNum {
+    display: inline-block;
+    padding: 6px 13px;
+    font-size: 1.15rem;
+    font-weight: 400;
+    float: left;
+  }
+
+  .aLink {
+    display: inline-block;
+    width: calc(100% / 4);
+    padding: 6px 0;
+    margin: 6px 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    float: left;
+    color: rgba(195, 177, 170, 1);
+    @include transition(all .3s);
+    
+    &:hover, &:active {
+      text-decoration: underline;
     }
   }
 }
@@ -453,6 +526,14 @@ footer {
   font-weight: 500;
 }
 
+.textPageTitle_26 {
+  display: inline-block;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: left;
+}
+
 .textBlack_16 {
   display: inline-block;
   width: 100%;
@@ -569,6 +650,14 @@ footer {
   }
 }
 
+.centText {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.23rem;
+  line-height: 1.8;
+}
+
 
 // space
 .p_td_70{
@@ -577,6 +666,10 @@ footer {
   @include range-width(0, 450px) {
     padding: 35px 0;
   }
+}
+
+.p_t_30 {
+  padding-top: 30px;
 }
 
 .p_t_70 {
@@ -622,6 +715,27 @@ footer {
 
 
 // link
+.bread {
+  display: inline-block;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  float: left;
+  line-height: 40px;
+
+  &:after {
+    display: inline-block;
+    content: '›';
+    margin: 0 10px;
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+
 .btnWhite {
   display: inline-block;
   padding: 15px 25px;
