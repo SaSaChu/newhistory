@@ -273,10 +273,37 @@ footer {
   }
 }
 
+.aList {
+  display: inline-block;
+  width: calc(100% / 4 - 30px * 3 / 4);
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+  &.aNoBorder {
+    border-bottom: 0;
+  }
+
+  @include range-width(0, 450px) {
+    width: calc(100% / 2 - 30px * 1 / 2);
+
+    &:first-child, &:nth-child(2){
+      padding-top: 30px;
+    }
+
+    &:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
 
 .allvilBox {
   display: inline-block;
-  width: calc(98% / 4 - 30px * 3 / 5);
+  width: calc(100% / 4 - 30px * 3 / 4);
   float: left;
   margin-right: 30px;
   margin-bottom: 30px;
@@ -302,7 +329,42 @@ footer {
 .allvilCent {
   display: inline-block;
   width: 100%;
+  position: relative;
   @include clearfix();
+
+  .aClass {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    background-color: white;
+    font-size: 1.23rem;
+    font-weight: 400;
+    padding: 8px 15px;
+
+    &:before {
+      display: inline-block;
+      content: attr(title);
+      font-size: 1rem;
+      font-weight: 300;
+      margin-right: 5px;
+    }
+  }
+
+  .aClassName {
+    display: inline-block;
+    width: 100%;
+    padding: 6px 0;
+    margin: 6px 0;
+    font-size: 1.3rem;
+    text-align: left;
+    color: rgba(187, 168, 160, 255);
+    @include transition(all .3s);
+    
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+  }
 
   .aYear {
     display: inline-block;
@@ -403,6 +465,49 @@ footer {
       margin-top: 0;
     }
   }
+}
+
+.voBoxs {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+  padding: 15px 10px;
+
+  &.voBgGrey {
+    background-color: rgba(247, 247, 247, 1);
+  }
+
+  .voBoxsL, .voBoxsR {
+    float: left;
+    display: inline-block;
+    font-size: 1.23rem;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+  .voBoxsL {
+    width: 20%;
+
+    @include range-width(0, 450px) {
+      width: 100%;
+      padding-bottom: 5px;
+    }
+  }
+
+  .voBoxsR {
+    width: 80%;
+    font-weight: 500;
+
+    @include range-width(0, 450px) {
+      width: 100%;
+    }
+  }
+}
+
+.aImg {
+  display: inline-block;
+  width: 100%;
+  height: 60px;
 }
 
 .newsImg {
@@ -656,6 +761,24 @@ footer {
   text-align: left;
   font-size: 1.23rem;
   line-height: 1.8;
+}
+
+.votext_16 {
+  display: inline-block;
+  font-size: 1.23rem;
+  float: left;
+}
+
+.votext_13 {
+  display: inline-block;
+  font-size: 1rem;
+  float: right;
+
+  @include range-width(0, 450px) {
+    float: left;
+    padding-top: 10px;
+    text-align: left;
+  }
 }
 
 

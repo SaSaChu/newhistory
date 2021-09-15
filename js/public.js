@@ -26,7 +26,7 @@ $(function() {
 
   // 圖片縮放
   if ($.fn.imgLiquid) {
-    $(".newsImg, .linkImg").imgLiquid ();
+    $(".newsImg, .linkImg, .aImg").imgLiquid ();
   }
 
   $('.dropdown').click(function() {
