@@ -15,9 +15,16 @@ a, button { text-decoration: none; outline: 0; cursor: pointer; }
 
 p { margin: 0; }
 
+.alivename { display: inline-block; width: 100%; float: left; text-align: left; font-style: normal; padding-top: 10px; font-size: 1.2rem; color: #876657; }
+
 .search-container { float: right; }
 
 input[type=text] { padding: 8px 10px; margin-top: 8px; font-size: 1rem; border: none; margin: 0; background-color: #f6f6f6; }
+
+ul { display: inline-block; width: 100%; float: left; text-align: left; }
+ul li { font-size: 1.3rem; line-height: 2; font-weight: 500; }
+ul li > a, ul li button { font-size: 1.3rem; line-height: 2; font-weight: 300; color: #4c59a9; background-color: transparent; border: 0; }
+ul li > a:hover, ul li button:hover { text-decoration: underline; }
 
 .search-container button { float: right; padding: 8px 10px; margin-right: 20px; font-size: 1rem; border: none; cursor: pointer; background-color: #f6f6f6; }
 .search-container button:hover { background: #ccc; }
@@ -47,6 +54,7 @@ input[type=text] { padding: 8px 10px; margin-top: 8px; font-size: 1rem; border: 
 .allBoxs:after { display: table; content: ""; line-height: 0; clear: both; }
 @media screen and (max-width: 449px) and (min-width: 0) { .allBoxs.mobNoSpace { padding: 0; } }
 @media screen and (max-width: 449px) and (min-width: 0) { .allBoxs { padding: 0 15px; } }
+.allBoxs.allBTB { border-top: 1px solid #afafaf; border-bottom: 1px solid #afafaf; padding: 15px 0; }
 
 .widthBoxs { display: inline-block; width: 100%; max-width: 1004px; *zoom: 1; }
 .widthBoxs:after { display: table; content: ""; line-height: 0; clear: both; }
@@ -115,6 +123,11 @@ footer { display: inline-block; width: 100%; max-width: 1004px; }
 .newsBoxs:nth-child(n+4) { margin-top: 30px; }
 @media screen and (max-width: 449px) and (min-width: 0) { .newsBoxs:nth-child(n+4) { margin-top: 0; } }
 
+.keyWordTitle { display: inline-block; font-size: 1.23rem; text-align: left; line-height: 1.5; font-weight: 500; text-align: left; float: left; color: #876657; }
+.keyWordTitle > p { display: inline-block; font-weight: 300; color: #505050; }
+.keyWordTitle > p:after { content: '、'; margin: 0 5px; }
+.keyWordTitle > p:last-child:after { display: none; }
+
 .voBoxs { display: inline-block; width: 100%; *zoom: 1; padding: 15px 10px; }
 .voBoxs:after { display: table; content: ""; line-height: 0; clear: both; }
 .voBoxs.voBgGrey { background-color: #f7f7f7; }
@@ -145,6 +158,8 @@ footer { display: inline-block; width: 100%; max-width: 1004px; }
 
 .orderTitle { display: inline-block; width: 100%; font-size: 1.23rem; line-height: 40px; text-align: left; }
 .orderTitle:before { display: inline-block; content: attr(title); width: 40px; height: 40px; color: white; font-size: 2rem; font-weight: 900; background-color: #B79F94; text-align: center; margin-right: 10px; }
+
+.noteTitle { display: inline-block; float: left; color: white; font-size: 1.6rem; font-weight: 500; background-color: #B79F94; text-align: center; padding: 3px 8px; position: relative; }
 
 .bigTitleWhite { display: inline-block; width: 100%; color: white; text-align: left; font-size: 2rem; line-height: 1.5; font-weight: 900; }
 @media screen and (max-width: 449px) and (min-width: 0) { .bigTitleWhite { font-size: 1.6rem; } }
